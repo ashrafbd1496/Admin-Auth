@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
+//
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Our custom routes
+Route::get('admin', [App\Http\Controllers\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::get('admin-register', [App\Http\Controllers\AdminRegController::class, 'showRegForm'])->name('admin.register');
+
+Route::post('admin-register', [App\Http\Controllers\AdminRegController::class, 'adminRegister'])->name('admin.register');
+
