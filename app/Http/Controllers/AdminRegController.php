@@ -31,7 +31,7 @@ class AdminRegController extends Controller
 
         ]);
 
-        return redirect() ->route('admin.login')->with('success','Admin Registration Successful');
+        return redirect() ->back()->with('success','Admin Registration Successful');
 
     }
 
